@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enquiry|| form</title>
     <link rel="stylesheet" href="style.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 
 <body>
     <div class="container d-flex">
-        <form>
+        <form id="submit">
             <h3>Enquire Now</h3>
             <div class="input-field">
                 <input type="text" placeholder="Enter Name *">
@@ -66,8 +68,26 @@
             </div>
 
         </form>
-
     </div>
+
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#submit').click(function (e) {
+                e.preventDefault();
+                var inputValue = $('input').val();
+                if (inputValue == "") {
+                    $('input').css({ border: '1px soldi red' })
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
